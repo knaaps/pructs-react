@@ -4,8 +4,10 @@ const router = require('../routes/userRoutes')
 const createToken =(id, role)=>{
     try{
         const token=jwt.sign({id:id, role:role}, process.env.
-            JWT_SECRET_KEY,{expiresIn:'1h'}
-        )
+            JWT_SECRET_KEY,{expiresIn:'30d'}
+        );
+
+        return token;
     }
     catch(error){
         console.log(error)
